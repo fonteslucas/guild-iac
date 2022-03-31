@@ -15,6 +15,7 @@ resource "aws_instance" "web" {
   user_data              = file("userdata.sh")
   tags = {
     "Name" = var.instancename
+    "teste" = "teste"
   }
 }
 
