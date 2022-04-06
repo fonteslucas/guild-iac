@@ -1,11 +1,12 @@
 resource "random_string" "random" {
-  length = 5
-  special = true
+  length = 6
+  special = false
+  upper = false
   override_special = "!@#$%"
 }
 
 resource "aws_s3_bucket" "b" {
-  bucket = var.nome
+  bucket = "${random_string.random.result}-dallisonlimateste-${var.nome}"
 
   tags = {
     Name        = "My bucket"
