@@ -6,3 +6,29 @@ variable "region" {
 variable "s3_bucket_name" {
   type = string
 }
+
+variable "tags" {
+  type = map 
+  default = {
+    name = "My-Bucket"
+    owner = "Hugo-Barros"
+  }
+}
+
+variable "vpc_cidr_blocks" {
+  type = list
+  default = ["172.31.0.0/16", "172.31.0.0/16", "172.31.0.0/16", "172.31.0.0/16"]
+}
+
+/*
+variable "vpc_cidr_blocks" {
+  type = list(object({
+    cidr_blocks = string
+  }))
+  default = [
+    {
+      cidr_blocks = "172.31.0.0/16"
+    }
+  ]
+}
+*/
