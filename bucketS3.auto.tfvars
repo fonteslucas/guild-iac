@@ -1,2 +1,2 @@
-region = "us-east-2"
+region = "us-east-1"
 s3_bucket_name = "hugo-s3"

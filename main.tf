@@ -8,11 +8,14 @@ resource "random_string" "random" {
 resource "aws_s3_bucket" "bucketS3" {
   bucket = "${var.s3_bucket_name}-${random_string.random.result}"
   
-  
+  /*
     tags = {
       name = "${var.tags["name"]}"
+      # name = var.tags["name"]
       owner = "${var.tags["owner"]}"
     }
+*/
+    tags = var.tags
   
 
 }
@@ -28,13 +31,30 @@ resource "aws_security_group" "allow-hugo" {
     from_port = 443 
     to_port = 443
     protocol = "tcp"
-    cidr_blocks = "${var.vpc_cidr_blocks}"
+    #cidr_blocks = "${var.vpc_cidr_blocks}"
+    #cidr_blocks = var.vpc_cidr_blocks
     #cidr_blocks = var.vpc_cidr_blocks[count.index]
-    #cidr_blocks = var.vpc_cidr_blocks[0]
-    # cidr_blocks = tolist(var.vpc_cidr_blocks)[count.index % length(var.vpc_cidr_blocks)]
+    cidr_blocks = [var.vpc_cidr_blocks[0]]
+    #cidr_blocks = tolist(var.vpc_cidr_blocks)[count.index % length(var.vpc_cidr_blocks)]
   }
 
   
 }
+/*
+resource "aws_security_group_rule" "teste" {
+count = length(var.vpc_cidr_blocks)
 
+ description = "TLS from VPC"
+    from_port = 443 
+    to_port = 443
+    protocol = "tcp"
+    #cidr_blocks = "${var.vpc_cidr_blocks}"
+    #cidr_blocks = var.vpc_cidr_blocks
+    #cidr_blocks = var.vpc_cidr_blocks[count.index]
+    #cidr_blocks = [var.vpc_cidr_blocks[0]]
+    #cidr_blocks = tolist(var.vpc_cidr_blocks)[count.index % length(var.vpc_cidr_blocks)]
+    cidr_blocks = [var.vpc_cidr_blocks[count.index]]
+
+}
+*/
 #fazer um exemploe de import

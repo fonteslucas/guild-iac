@@ -8,16 +8,18 @@ variable "s3_bucket_name" {
 }
 
 variable "tags" {
-  type = map 
+  type = map
   default = {
     name = "My-Bucket"
     owner = "Hugo-Barros"
+    iac = "true"
+    CostCenter = "1234"
   }
 }
 
 variable "vpc_cidr_blocks" {
   type = list
-  default = ["172.31.0.0/16", "172.31.0.0/16", "172.31.0.0/16", "172.31.0.0/16"]
+  default = ["172.31.0.0/16", "172.32.0.0/16", "10.0.0.0/16", "10.60.0.0/16"]
 }
 
 /*
