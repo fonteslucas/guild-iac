@@ -11,10 +11,7 @@ variable "s3_bucket_name" {
 
 variable "s3_bucket_tags" {
   description = "Tags applied to the S3 bucket"
-  type = map(object({
-    Name = string
-    Owner = string
-  }))
+  type = map
 }
 
 variable "sg_name" {

@@ -23,5 +23,4 @@ resource "aws_security_group_rule" "sgRule" {
   protocol = "tcp"
   description = "Service Ports"
   cidr_blocks = var.sg_rule_cidr
-  self = true
 }
