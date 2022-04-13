@@ -6,21 +6,21 @@ resource "random_string" "random" {
 }
 
 resource "aws_s3_bucket" "bucketS3" {
-  bucket = "${var.s3_bucket_name}-${random_string.random.result}"
+  bucket = var.environment ? "${var.s3_bucket_name}-${random_string.random.result}-${var.environment}" : "${var.s3_bucket_name}-${random_string.random.result}"
 
-  tags = var.s3_bucket_tags
+  tags = var.environment ? merge(var.s3_bucket_tags, {Environment = "${var.environment}"}) : var.s3_bucket_tags
 }
 
 resource "aws_security_group" "securityGroup" {
-  name = var.sg_name
+  name = var.environment ? "${var.sg_name}-${var.environment}" : var.sg_name
 }
 
 resource "aws_security_group_rule" "sgRule" {
   security_group_id = aws_security_group.securityGroup.id
-  type = "ingress"
-  from_port = 8080
-  to_port = 8090
-  protocol = "tcp"
-  description = "Service Ports"
-  cidr_blocks = var.sg_rule_cidr
+  type              = "ingress"
+  from_port         = 8080
+  to_port           = 8090
+  protocol          = "tcp"
+  description       = "Service Ports"
+  cidr_blocks       = var.environment != "PRD" ? [ "0.0.0.0/0", "::/0" ] : var.sg_rule_cidr
 }

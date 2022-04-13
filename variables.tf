@@ -23,3 +23,8 @@ variable "sg_rule_cidr" {
   description = "SG Rules CIDR Blocks"
   type = list(string)
 }
+
+variable "environment" {
+  description = "Changes the resource's default parameters"
+  type = string
+}
