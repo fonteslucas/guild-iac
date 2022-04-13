@@ -7,9 +7,6 @@ resource "random_string" "random" {
 
 resource "aws_s3_bucket" "b" {
   bucket = "${random_string.random.result}-dallisonlimateste-${var.nome}"
-
-  tags = {
-    Name        = "My bucket"
-    Environment = "Dev"
-  }
+  tags = var.map_tags
 }
+
