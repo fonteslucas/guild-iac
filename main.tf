@@ -6,13 +6,13 @@ resource "random_string" "random" {
 }
 
 resource "aws_s3_bucket" "bucketS3" {
-  bucket = var.environment ? "${var.s3_bucket_name}-${random_string.random.result}-${var.environment}" : "${var.s3_bucket_name}-${random_string.random.result}"
+  bucket = can(var.environment) ? "${var.s3_bucket_name}-${random_string.random.result}-${var.environment}" : "${var.s3_bucket_name}-${random_string.random.result}"
 
-  tags = var.environment ? merge(var.s3_bucket_tags, {Environment = "${var.environment}"}) : var.s3_bucket_tags
+  tags = can(var.environment) ? merge(var.s3_bucket_tags, {Environment = "${var.environment}"}) : var.s3_bucket_tags
 }
 
 resource "aws_security_group" "securityGroup" {
-  name = var.environment ? "${var.sg_name}-${var.environment}" : var.sg_name
+  name = can(var.environment) ? "${var.sg_name}-${var.environment}" : var.sg_name
 }
 
 resource "aws_security_group_rule" "sgRule" {
