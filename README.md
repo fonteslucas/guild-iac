@@ -4,7 +4,7 @@ A Terraform module for publishing static websites on AWS' S3.
 
 Requires two files to be present in the same directory as this module is used:
 
-- `index.html` - The homepage of the website.
+- `index.html` - The homepage of the website with API CEP.
 - `error.html` - The page shown when errors occur.
 
 ## Inputs
