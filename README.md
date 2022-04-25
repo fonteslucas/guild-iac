@@ -1,6 +1,6 @@
 # Terraform AWS 
 
-Bucket + object
+Bucket with module + object 
 
 ## For execute first command must in folder s3
 terraform init
