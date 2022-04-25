@@ -7,5 +7,4 @@ id_rsa
 .terraform
 .terraform.lock.hcl
 terraform*
-s3/.terraform*
 
