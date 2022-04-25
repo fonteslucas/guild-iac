@@ -1,11 +1,7 @@
-resource "aws_s3_bucket" "object_s3" {
-  bucket = "deivid-object-img"
-  acl    = "public-read"
+module "s3-object" {
+    source = "./s3-object"
 }
 
-# Upload of file
-resource "aws_s3_bucket_object" "index" {
-  bucket       = aws_s3_bucket.object_s3.bucket
-  key          = "certificacao.png"
-  acl          = "public-read"
+output "s3-object" {
+    value = module.s3-object.website_endpoint
 }
