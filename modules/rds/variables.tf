@@ -1,8 +1,3 @@
-variable "region" {
-  description = "AWS Region"
-  type = string
-}
-
 variable "engine" {
   description = "Database engine"
   type = string
