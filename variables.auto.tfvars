@@ -1,6 +1,5 @@
 region = "us-east-1"
 nome = "lucas"
-environment = "teste1"
 
 map_tags = {
     Nome = "teste1"

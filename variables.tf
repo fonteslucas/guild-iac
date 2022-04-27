@@ -13,8 +13,3 @@ variable "map_tags" {
 variable "sgrule_cidr_blocks" {
   type = list(string)
 }
-
-variable "environment" {
-  type = string
-  default = "Teste"
-}
