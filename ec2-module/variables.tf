@@ -1,4 +1,11 @@
 variable "environment" {
   type = string
-  default = "Teste"
+}
+
+variable "ami" {
+  type = string
+}
+
+variable "instancetype" {
+  type = string
 }
