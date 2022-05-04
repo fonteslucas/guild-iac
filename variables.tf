@@ -1,41 +1,20 @@
 variable "region" {
-  description = "AWS Region"
+  description = "AWS Region where resources will be deployed"
+  type = string
+  default = "us-east-2"
+}
+
+variable "s3_bucket_name" {
+  description = "Name of the S3 bucket"
   type = string
 }
 
-variable "engine" {
-  description = "Database engine"
-  type = string
+variable "s3_bucket_tags" {
+  description = "Tags applied to the S3 bucket"
+  type = map
 }
 
-variable "engine_version" {
-  description = "Database engine's version"
-  type = string
-}
-
-variable "instance_class" {
-  description = "Database instance's class"
-  type = string
-}
-
-variable "name" {
-  description = "Database's name"
-  type = string
-}
-
-variable "username" {
-  description = "Database instance's login username"
-  type = string
-  sensitive = true
-}
-
-variable "password" {
-  description = "Database instance's login password"
-  type = string
-  sensitive = true
-}
-
-variable "parameter_group_name" {
-  description = "Database's default parameter group"
+variable "environment" {
+  description = "Changes the resource's default parameters"
   type = string
 }
