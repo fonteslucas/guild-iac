@@ -4,7 +4,7 @@ resource "aws_codecommit_repository" "source_repo" {
 }
 
 resource "aws_iam_role" "trigger_role" {
-  assume_role_policy = file("policys/allow_rule_invoke_pipeline.json")
+  assume_role_policy = data.iam_policy_document_document.role.json
   path               = "/"
 }
 
