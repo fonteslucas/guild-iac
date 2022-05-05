@@ -1,5 +1,5 @@
 variable "bucket_names" {
-  type = list(any)
+  type = set(string)
 }
 
 variable "region" {
