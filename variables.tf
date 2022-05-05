@@ -15,20 +15,8 @@ variable "tags" {
   }
 }
 
-variable "vpc_cidr_blocks" {
-  type = list
-  default = ["172.31.0.0/16", "172.31.0.0/16", "172.31.0.0/16", "172.31.0.0/16"]
-}
+/*variable "s3_count" {
+  default     = 3
+  type        = string
+}*/
 
-/*
-variable "vpc_cidr_blocks" {
-  type = list(object({
-    cidr_blocks = string
-  }))
-  default = [
-    {
-      cidr_blocks = "172.31.0.0/16"
-    }
-  ]
-}
-*/
