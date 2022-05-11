@@ -1,41 +1,34 @@
 variable "region" {
   description = "AWS Region"
-  type = string
+  type        = string
 }
 
-variable "engine" {
-  description = "Database engine"
-  type = string
+variable "s3_bucket_name" {
+  description = "Name of the S3 bucket"
+  type        = string
 }
 
-variable "engine_version" {
-  description = "Database engine's version"
-  type = string
+variable "s3_bucket_tags" {
+  description = "Tags applied to the S3 bucket"
+  type        = map(any)
 }
 
-variable "instance_class" {
-  description = "Database instance's class"
-  type = string
+variable "iam_policy_name" {
+  description = "Name of the IAM policy"
+  type        = string
 }
 
-variable "name" {
-  description = "Database's name"
-  type = string
+variable "iam_role_name" {
+  description = "Name of the IAM role"
+  type        = string
 }
 
-variable "username" {
-  description = "Database instance's login username"
-  type = string
-  sensitive = true
+variable "iam_role_tags" {
+  description = "IAM role tags"
+  type        = map(any)
 }
 
-variable "password" {
-  description = "Database instance's login password"
-  type = string
-  sensitive = true
-}
-
-variable "parameter_group_name" {
-  description = "Database's default parameter group"
-  type = string
+variable "environment" {
+  description = "Changes the resource's default parameters"
+  type        = string
 }
