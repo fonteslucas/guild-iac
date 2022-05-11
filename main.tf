@@ -7,7 +7,6 @@ module "s3" {
 
 module "iam" {
   source          = "./modules/iam"
-  iam_policy_name = var.iam_policy_name
   iam_role_name   = var.iam_role_name
   iam_role_tags   = var.iam_role_tags
 }

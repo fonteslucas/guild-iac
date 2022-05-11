@@ -1,30 +1,10 @@
-resource "aws_iam_policy" "policy" {
-  name = var.iam_policy_name
-  path = "/"
-
-  policy = jsonencode({
-    Version = "2012-10-17"
-    Statement = [
-      {
-        Action = [
-          "s3:ListBucket",
-        ]
-        Effect = "Allow"
-        Resource = [
-          "aws_s3_bucket.bucketS3Count[0].arn",
-          "aws_s3_bucket.bucketS3Count[1].arn",
-          "aws_s3_bucket.bucketS3Count[2].arn",
-          "aws_s3_bucket.bucketS3Count[3].arn"
-        ]
-      },
-    ]
-  })
-}
-
 resource "aws_iam_role" "role_s3_read" {
   name = var.iam_role_name
-
-  assume_role_policy = aws_iam_policy.policy
-
+  assume_role_policy = data.aws_iam_policy_document.instance-assume-role-policy.json
+  managed_policy_arns = [aws_iam_policy.read_s3_bucket.arn]
   tags = var.iam_role_tags
+}
+
+resource "aws_iam_policy" "read_s3_bucket" {
+  policy = data.aws_iam_policy_document.s3_read.json
 }
