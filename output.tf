@@ -1,3 +1,7 @@
-# output "arn" {
-#   value = [for k in aws_s3_bucket.buckets : k.arn]
-# }
+output "arn" {
+  value = module.S3.arn
+}
+
+output "arn_role" {
+  value = module.IAM.role-id
+}
