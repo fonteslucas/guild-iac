@@ -5,3 +5,7 @@ variable "bucket_names" {
 variable "region" {
   type = string
 }
+
+variable "name_policy" {
+  type = string
+}

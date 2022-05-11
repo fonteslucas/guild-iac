@@ -1,25 +1,15 @@
 region = "us-east-1"
+
 bucket_names = {
-  "bucket-dallison-lima" = {
-    versioning = "Enabled"
-  },
-  "bucket-lucas-go" = {
-    versioning = "Disabled"
+  "teste1" = {
+    id = "dallison_lima_teste1"
+  }
+  "teste2" = {
+    id = "dallison_lima_teste2"
+  }
+  "teste3" = {
+    id = "dallison_lima_teste3"
   }
 }
 
-# aws_s3_bucket.buckets
-
-# {
-#     "bucket-dallison-lima" = {
-
-#         id = "bucket-dallison-lima"
-#     },
-
-#     "bucket-lucas-go" = {
-
-#         id = "bucket-lucas-go"
-#     },
-
-
-# }
+name_policy = "s3-read-role"
