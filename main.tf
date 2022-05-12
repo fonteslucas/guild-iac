@@ -8,6 +8,6 @@ module "IAM" {
   source    = "./modules/IAM"
   path      = "/"
   name      = var.name_policy
-  output_s3 = module.S3.arn
+  output_s3 = module.S3.arn_teste
 }
 
