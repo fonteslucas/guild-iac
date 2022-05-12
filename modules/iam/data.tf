@@ -15,6 +15,6 @@ data "aws_iam_policy_document" "s3_read" {
       "s3:ListBucket"
     ]
     effect    = "Allow"
-    resources = ["*"]
+    resources = var.s3_bucket_arns
   }
 }
