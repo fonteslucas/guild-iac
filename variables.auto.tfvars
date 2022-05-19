@@ -1,25 +1,21 @@
 region = "us-east-1"
-bucket_names = {
-  "bucket-dallison-lima" = {
-    versioning = "Enabled"
-  },
-  "bucket-lucas-go" = {
-    versioning = "Disabled"
-  }
-}
 
-# aws_s3_bucket.buckets
+name-vpc = "client-vpc"
 
-# {
-#     "bucket-dallison-lima" = {
+cidr-vpc = "10.0.0.0/20"
 
-#         id = "bucket-dallison-lima"
-#     },
+cidr_private = [
+  "1",
+  "2",
+  "3",
+  "4"
+]
 
-#     "bucket-lucas-go" = {
+cidr_public = [
+  "4",
+  "5",
+  "6",
+  "7"
+]
 
-#         id = "bucket-lucas-go"
-#     },
-
-
-# }
+availability-zones = ["us-east-1a"]

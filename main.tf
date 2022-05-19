@@ -1,26 +1,17 @@
-resource "random_string" "random" {
-  for_each         = var.bucket_names
-  length           = 10
-  special          = false
-  upper            = false
-  override_special = "!@#$%"
-}
+module "vpc" {
 
-resource "aws_s3_bucket" "buckets" {
+  source = "terraform-aws-modules/vpc/aws"
 
-  for_each = var.bucket_names
+  name                 = var.name-vpc
+  cidr                 = var.cidr-vpc
+  azs                  = data.aws_availability_zones.azs.names
+  private_subnets      = slice(cidrsubnets(var.cidr-vpc, 4, 4, 4), 0, 3)
+  public_subnets       = slice(cidrsubnets(var.cidr-vpc, 4, 4, 4, 4, 4, 4), 3, 6)
 
-  bucket = "${each.key}-guild-iac-${random_string.random[each.key].result}"
 
-}
-
-resource "aws_s3_bucket_versioning" "versioning_example" {
-  for_each = var.bucket_names
-
-  bucket = aws_s3_bucket.buckets[each.key].id
-
-  versioning_configuration {
-    status = each.value.versioning
+  tags = {
+    Terraform   = "true"
+    Environment = "prod"
   }
-}
 
+}
