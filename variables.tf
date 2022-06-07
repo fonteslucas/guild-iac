@@ -14,3 +14,7 @@ variable "region" {
   type = string
 }
 
+variable "teste" {
+  type = string
+}
+
