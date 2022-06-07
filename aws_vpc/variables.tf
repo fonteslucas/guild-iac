@@ -1,10 +1,12 @@
 variable "cidr_vpc" {
-  type    = string
-  default = "10.0.0.0/20"
+  type        = string
+  default     = "10.0.0.0/20"
+  description = "teste"
 }
 
 variable "public_subnet_numbers" {
-  type = map(string)
+  type        = map(string)
+  description = "teste"
   default = {
     "us-east-1a" = 1
     "us-east-1b" = 2
@@ -13,7 +15,8 @@ variable "public_subnet_numbers" {
 }
 
 variable "private_subnet_numbers" {
-  type = map(string)
+  type        = map(string)
+  description = "teste"
   default = {
     "us-east-1a" = 4
     "us-east-1b" = 5

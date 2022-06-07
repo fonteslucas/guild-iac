@@ -1,20 +1,9 @@
-variable "name-vpc" {
-  type = string
-}
-
-variable "cidr-vpc" {
-  type = string
-}
-
-variable "availability-zones" {
-  type = list(any)
+variable "cidr_vpc" {
+  type        = string
+  description = "teste"
 }
 
 variable "region" {
-  type = string
+  type        = string
+  description = "teste"
 }
-
-variable "teste" {
-  type = string
-}
-
