@@ -33,5 +33,5 @@ override.tf.json
 .terraformrc
 terraform.rc
 
-.pre-commit-config.yaml
-.terraform-docs.yml
+**/.pre-commit-config.yaml/*
+**/.terraform-docs.yml/*
