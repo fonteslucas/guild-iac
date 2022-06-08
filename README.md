@@ -26,6 +26,7 @@ No resources.
 |------|-------------|------|---------|:--------:|
 | domain\_name | armazena o nome do dominio | `string` | n/a | yes |
 | region | Variavel que armazena a regiao default | `string` | n/a | yes |
+| tag\_departamento | Departamento para o qual sera criado o site. Valores aceitos = Marketing, RH, Financeiro & TI. | `string` | n/a | yes |
 
 ## Outputs
 

@@ -30,6 +30,7 @@ No modules.
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | domain\_name | armazena o nome do dominio | `string` | n/a | yes |
+| tags\_validation | Faz a validacao de tags | `string` | n/a | yes |
 
 ## Outputs
 
