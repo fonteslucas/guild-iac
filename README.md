@@ -14,7 +14,7 @@ No providers.
 
 | Name | Source | Version |
 |------|--------|---------|
-| vpc | ./aws_vpc | n/a |
+| website | ./s3_website | n/a |
 
 ## Resources
 
@@ -24,8 +24,8 @@ No resources.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| cidr\_vpc | teste | `string` | n/a | yes |
-| region | teste | `string` | n/a | yes |
+| domain\_name | armazena o nome do dominio | `string` | n/a | yes |
+| region | Variavel que armazena a regiao default | `string` | n/a | yes |
 
 ## Outputs
 

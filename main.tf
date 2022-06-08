@@ -1,6 +1,4 @@
-module "vpc" {
-
-  source   = "./aws_vpc"
-  cidr_vpc = var.cidr_vpc
-
+module "website" {
+  source      = "./s3_website"
+  domain_name = var.domain_name
 }

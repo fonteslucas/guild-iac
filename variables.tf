@@ -1,9 +1,9 @@
-variable "cidr_vpc" {
-  type        = string
-  description = "teste"
-}
-
 variable "region" {
   type        = string
-  description = "teste"
+  description = "Variavel que armazena a regiao default"
+}
+
+variable "domain_name" {
+  type        = string
+  description = "armazena o nome do dominio"
 }
