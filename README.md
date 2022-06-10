@@ -3,8 +3,8 @@
 
 | Name | Version |
 |------|---------|
-| terraform | >= 1.2.2 |
-| aws | 3.74.1 |
+| terraform | >= 0.14 |
+| aws | ~> 4.0 |
 
 ## Providers
 
