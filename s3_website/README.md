@@ -20,6 +20,9 @@ No modules.
 
 | Name | Type |
 |------|------|
+| [aws_acm_certificate.cert](https://registry.terraform.io/providers/hashicorp/aws/3.74.1/docs/resources/acm_certificate) | resource |
+| [aws_acm_certificate_validation.cert](https://registry.terraform.io/providers/hashicorp/aws/3.74.1/docs/resources/acm_certificate_validation) | resource |
+| [aws_route53_record.rc](https://registry.terraform.io/providers/hashicorp/aws/3.74.1/docs/resources/route53_record) | resource |
 | [aws_route53_record.www](https://registry.terraform.io/providers/hashicorp/aws/3.74.1/docs/resources/route53_record) | resource |
 | [aws_route53_zone.primary](https://registry.terraform.io/providers/hashicorp/aws/3.74.1/docs/resources/route53_zone) | resource |
 | [aws_s3_bucket.website_bucket](https://registry.terraform.io/providers/hashicorp/aws/3.74.1/docs/resources/s3_bucket) | resource |
@@ -29,7 +32,7 @@ No modules.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| domain\_name | armazena o nome do dominio | `string` | n/a | yes |
+| domain\_name | Armazena o nome do dominio | `string` | n/a | yes |
 | tags\_validation | Faz a validacao de tags | `string` | n/a | yes |
 
 ## Outputs

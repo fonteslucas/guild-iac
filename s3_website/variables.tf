@@ -1,6 +1,6 @@
 variable "domain_name" {
   type        = string
-  description = "armazena o nome do dominio"
+  description = "Armazena o nome do dominio"
 }
 
 variable "tags_validation" {
